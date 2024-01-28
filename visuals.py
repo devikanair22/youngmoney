@@ -39,11 +39,6 @@ info5 = ""
 ### Text used when buttons are needed ###
 choiceText = ""
 
-### Slider and max value for money slider ###
-sliderVal = 0
-minVal = 0
-maxVal = 50000
-
 ### Counts how many times it has been 6 months
 timeCount = 0
 promptNum = 0
@@ -52,6 +47,7 @@ jobTimeFrame = 0
 ### User's total balance ###
 balance = 0
 income = 0
+path = 0
 
 
 ### What shows up on the screen, left side will be text/instructions, left side are the buttons ###
@@ -60,7 +56,7 @@ page = """
 <|layout|columns=4 2|
 
     <|
-## <|{text}|>
+<|{text}|>
     |>
 
     <|
@@ -131,7 +127,7 @@ def Button5(state):
     return
 
 def SubmitButton(state):
-    allTogether(state, 6, sliderVal)
+    allTogether(state, 6)
     return
 
 def NextButton(state):
@@ -160,9 +156,11 @@ def allTogether(state, button, sliderVal = 0):
     if (options[0] == "slider"): # When the slider should be used
         ToggleButtons(state, False, True, options)
         state.choiceText = "Pick your value."
-        if (promptNum == 2 or promptNum == 3):
-            balance -= sliderVal
+        if (promptNum == 2):
+            balance += sliderVal
         elif (promptNum == 4):
+            balance -= sliderVal
+        elif (promptNum == 3):
             balance += sliderVal
     elif (options[0] == "next"): # When Next is the only choice
         ToggleButtons(state, False, False, options)

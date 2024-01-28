@@ -21,7 +21,7 @@ def Prompts(prompt, time, timeFrame):
                  where you may opt into an on or off campus housing.  If you are in the military, \
                 housing is completely covered. Going to a 2-Year Program is similar to going to a \
                 University, as you will be able to get live off-campus housing or you can live with \
-                your parents throughout. Slide the sidebar to show how much your monthly rent is expected to be?"]
+                your parents throughout. Type in your expected rent."]
     elif (prompt == 3):
         return ["You will have many multiple expenses. In the future ahead of you. This comes from some \
                 entertainment to paying your food bills to paying off your car to self care to paying monthly \
@@ -31,15 +31,15 @@ def Prompts(prompt, time, timeFrame):
                  Not paying your loans will eventually catch up with you as student loans tend to have compounding \
                 interest. Compounding interest is when a fee multiplies by the interest rate notes either annually \
                 or monthly basis. For example, you may be taking a $100,000 loan. However, in 10 years, if compounded \
-                annually with a 5% interest rate, it will be $162,889! In 23 years, this amount will TRIPLE! Slide the \
-                sidebar to show how much your monthly expenses are expected to be?"]
+                annually with a 5% interest rate, it will be $162,889! In 23 years, this amount will TRIPLE! Type in \
+                your expected expenses."]
     elif (prompt == 4):
         return ["Now let's look into how much money is going into your account monthly. It is common for people after \
                 graduating to get or apply for full-time or part-time jobs to make some money to sustain themselves \
                 while also keeping their education. This can help you by not taking as many loans and not going deeper\
                  into debt. Getting a job can be one of your first steps to financial freedom. Other forms of money going \
                 back into your pockets is by scholarships, government assistance and/or parental/guardian financial \
-                assistance. Slide the sidebar to show how much your monthly income and assistants are expected to be?"]
+                assistance. Type in your monthly income and assistance."]
     elif (prompt == 1):
         return ["What job do you want or are you aiming for?"]
     elif (prompt == 5 and time == 0):
@@ -60,11 +60,11 @@ def ButtonOptions(prompt, time):
     elif (prompt == 1):
         return ["job choice"]
     elif (prompt == 2):
-        return ["slider", 0, 20000]
+        return ["slider"]
     elif (prompt == 3):
-        return ["slider", 30, 2000]
+        return ["slider"]
     elif (prompt == 4):
-        return ["slider", 0, 50000]
+        return ["slider"]
     elif (prompt == 5):
         return ["next"]
 
@@ -74,7 +74,7 @@ def SpecificJobs(numChoice):
     elif (numChoice == 2):
         return ["Technology/Engineering", "Business/Economics", "Social Sciences", "Agriculture Sciences", "Communication", 4]
     elif (numChoice == 3):
-        return ["Military", "", "", "", "", 4]
+        return ["Navy", "Army", "Marines", "Air Force", "Coast Guard", 4]
     elif (numChoice == 4):
         return ["Cashier", "Sanitations", "Truck Driver", "Secretary/Administrative Assistant", 0]
 
